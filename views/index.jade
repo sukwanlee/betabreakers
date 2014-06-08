@@ -5,7 +5,7 @@ block content
     $(document).ready(function() {
       var height = $(window).height();
       var mainHeight = height * 0.65;
-      $('#main > h1').css("padding-top", mainHeight*0.4);
+      $('#main > h2').css("padding-top", mainHeight*0.35);
       $('#main').css("min-height", mainHeight);
 
       var offset = $("#register").height();
@@ -15,20 +15,18 @@ block content
       var info_height = height * 0.35 - offset*2;
       $('#info').css("height", info_height);
       $('.info_block').css("max-height", info_height);
-
-      var speaker_height = height * 0.5;
-      $('#speakers').css("height", speaker_height);
-      $('.speaker_block').css("height", speaker_height);
     });
 
   div#main
-    h1 Beta Breakers Game Jam
+    h2 Beta Breakers 
+      br
+      | Game Jam
     .cohost
       h3 Co-hosted by
     .cohost
       img(src="images/vungle-logo.png")
   .dummy
-    a#register(href="#" class="button button-pill button-large") Register
+    aside.diamond(href="#") Register for Free
   #info 
     .info_block
       i.info_icon(class="fa fa-calendar fa-4x")
@@ -46,18 +44,20 @@ block content
       i.info_icon(class="fa fa-users fa-4x")
       br
       | 300 Game Devs
-  hr
-  #speakers
-    h1 Speakers
-    .speaker_block
-      .speaker_image
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    .speaker_block
-      .speaker_image
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    .speaker_block
-      .speaker_image
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  hr
-  #sponsors
-    h1 Sponsors
+  .dummy
+    aside.diamond Speakers
+  .speaker_block
+    .speaker_image
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  .speaker_block
+    .speaker_image
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  .speaker_block
+    .speaker_image
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  .dummy
+    aside.diamond Sponsors
+  br
+  br
+  br
+  br
