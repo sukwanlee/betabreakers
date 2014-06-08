@@ -1,0 +1,63 @@
+extends layout
+
+block content
+  script(type="text/javascript").
+    $(document).ready(function() {
+      var height = $(window).height();
+      var mainHeight = height * 0.65;
+      $('#main > h1').css("padding-top", mainHeight*0.4);
+      $('#main').css("min-height", mainHeight);
+
+      var offset = $("#register").height();
+      $("#register").css("margin-top", -offset*0.7);
+      $("#info").css("padding-top", offset*2);
+
+      var info_height = height * 0.35 - offset*2;
+      $('#info').css("height", info_height);
+      $('.info_block').css("max-height", info_height);
+
+      var speaker_height = height * 0.5;
+      $('#speakers').css("height", speaker_height);
+      $('.speaker_block').css("height", speaker_height);
+    });
+
+  div#main
+    h1 Beta Breakers Game Jam
+    .cohost
+      h3 Co-hosted by
+    .cohost
+      img(src="images/vungle-logo.png")
+  .dummy
+    a#register(href="#" class="button button-pill button-large") Register
+  #info 
+    .info_block
+      i.info_icon(class="fa fa-calendar fa-4x")
+      br
+      | August 1-2
+      br
+      | 24 Hours
+    .info_block
+      i.info_icon(class="fa fa-map-marker fa-4x")
+      br
+      | Vungle HQ
+      br
+      | San Francisco, CA
+    .info_block
+      i.info_icon(class="fa fa-users fa-4x")
+      br
+      | 300 Game Devs
+  hr
+  #speakers
+    h1 Speakers
+    .speaker_block
+      .speaker_image
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    .speaker_block
+      .speaker_image
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    .speaker_block
+      .speaker_image
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  hr
+  #sponsors
+    h1 Sponsors
