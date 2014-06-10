@@ -20,6 +20,12 @@ hr {
   margin-bottom: 0;
   padding-bottom: 0;
 
+  background: url("../images/background-4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  // border-bottom: 2px solid black;
   overflow: hidden;
 
   #header {
@@ -39,7 +45,7 @@ hr {
       font-size: 2.5em;
     }
 
-    padding-bottom: 70px;
+    padding-bottom: 100px;
     // border-bottom: 2px solid white;
   }
 
@@ -54,6 +60,7 @@ hr {
 
     text-align: center;
     vertical-align: middle;
+    padding-top: 50px;
 
     // overflow: hidden;
 
@@ -66,48 +73,29 @@ hr {
 
 .dummy{
   width: 160px;
-  margin: 25px auto;
+  margin: 0 auto;
   margin-top: 0;
   margin-bottom: 0;
 
   .background{
     aside {
-      margin: 20px 0;
+      margin: 0 auto;
       margin-top: -21px;
       margin-bottom: -19px;
       line-height: 40px;
       position: relative;
-      cursor: pointer;
+      // cursor: pointer;
       user-select: none;
       text-align: center;
       color: white;
 
       &.diamond {
-        background-color: black;
+        background-color: #EDEDED;
         &:after {
-          border-color: transparent black;
+          border-color: transparent #EDEDED;
         }
         &:before {
-          border-color: transparent black; 
-        }
-        &:before {
-          left: -20px;
-          border-width: 20px 20px 20px 0;
-        }
-        &:after {
-          right: -20px;
-          border-width: 20px 0 20px 20px;
-        }
-      }
-
-      &.diamond_white {
-        background-color: white;
-        // &:color: white;
-        &:after {
-          border-color: transparent white;
-        }
-        &:before {
-          border-color: transparent white; 
+          border-color: transparent #EDEDED; 
         }
         &:before {
           left: -20px;
@@ -118,7 +106,6 @@ hr {
           border-width: 20px 0 20px 20px;
         }
       }
-
       z-index: 8;
     }
 
@@ -179,20 +166,62 @@ hr {
     }
   }
 
+  #register_button_background {
+    aside {
+      width: 160px;
+      margin: 20px 0;
+      margin-top: -29px;
+      margin-bottom: -29px;
+      line-height: 58px;
+      position: absolute;
+      user-select: none;
+      text-align: center;
+      color: white;
+
+      &.diamond_white {
+        background-color: white;
+        &:after {
+          border-color: transparent white;
+        }
+        &:before {
+          border-color: transparent white; 
+        }
+        &:before {
+          left: -29px;
+          border-width: 29px 29px 29px 0;
+        }
+        &:after {
+          right: -29px;
+          border-width: 29px 0 29px 29px;
+        }
+      }
+    }
+
+    aside:before, aside:after {
+      content: '';
+      position: absolute;
+      height: 0;
+      width: 0;
+      border-style: solid;
+      border-width: 0;
+      z-index: 10;
+    }
+  }
+
   #register_button {
     aside {
-      width: 158px;
+      width: 156px;
       margin: 20px 0;
-      margin-top: -19px;
-      margin-bottom: -19px;
-      line-height: 36px;
+      margin-top: -25px;
+      margin-bottom: -25px;
+      line-height: 50px;
       position: absolute;
       cursor: pointer;
       user-select: none;
       text-align: center;
       color: white;
 
-      margin-left: 1px;
+      margin-left: 2px;
 
       &.diamond {
         background-color: #5CB85C;
@@ -203,12 +232,12 @@ hr {
           border-color: transparent #5CB85C; 
         }
         &:before {
-          left: -18px;
-          border-width: 18px 18px 18px 0;
+          left: -25px;
+          border-width: 25px 25px 25px 0;
         }
         &:after {
-          right: -18px;
-          border-width: 18px 0 18px 18px;
+          right: -25px;
+          border-width: 25px 0 25px 25px;
         }
       }
 
@@ -231,41 +260,25 @@ hr {
   }
 }
 
-#main::before {
-  content: "";
-  background: url("../images/background-2.jpg");
-  // background-color: black;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  // opacity: 0.7;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: 0;  
-  height: 100%; 
-
-  border-bottom: 2px solid black;
-}
-
 #description {
-  padding-top: 40px;
-  padding-bottom: 130px;
-  background-color: black;
+  padding-top: 70px;
+  padding-bottom: 80px;
+  // background-color: black;
   opacity: 0.85;
   width: 100%;
   text-align: center;
 
-  border-bottom: 2px solid black;
-  color: white;
+  border-bottom: 2px solid #EDEDED;
+  // color: white;
 
   p {
-    width: 60%;
+    width: 50%;
+    max-width: 800px;
+
     margin: 0 auto;
     text-align: center;
     font-size: 1em;
+    line-height: 2em;
   }
 }
 
@@ -273,6 +286,8 @@ hr {
   width: 100%;
   background-color: white;
   opacity: 0.85;
+
+  border-bottom: 2px solid #EDEDED;
 }
 
 .speaker_block {
@@ -280,13 +295,16 @@ hr {
   padding-bottom: 100px;
   display: inline-block;
   width: 33%;
-  border-bottom: 2px solid black;
+  // border-bottom: 2px solid black;
 
   text-align: center;
 
   .speaker_image {
     margin: 0 auto;
     margin-bottom: 50px;
+
+    // border: 1px solid black;
+    // border-offset: -4px;
 
     width: 150px;
     height: 150px;
@@ -297,10 +315,11 @@ hr {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
+    // border: 2px solid #999999;
 
-    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    // box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    // -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    // -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
   }
 
   p {
@@ -317,8 +336,67 @@ hr {
   align: middle;
   text-align: center;
 
-  background-color: white;
-  opacity: 0.85;
+  border-bottom: 2px solid #EDEDED;
+  // opacity: 0.85;
+}
+
+#details {
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  align: middle;
+  text-align: center;
+
+  height: 350px;
+  border-bottom: 2px solid #EDEDED;
+}
+
+#schedule {
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  align: middle;
+  text-align: center;
+
+  #schedule_container {
+    width: 40%;
+    margin: 0 auto;
+
+    .row {
+      width: 100%;
+      position: relative;
+
+      border-bottom: 2px solid #dedede;
+      // border-top: 2px solid black;
+
+      text-align: center;
+
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 30px;
+      padding-right: 30px;
+
+      font-size: 1em;
+
+      &:hover {
+        background-color: #E0DEDE;
+      }
+
+      .time {
+        width: 50%;
+        text-align: left;
+
+        display: inline-block;
+      }
+
+      .event {
+        width: 50%;
+        text-align: right;
+
+        display: inline-block;
+      }
+    }
+  }
 }
 
 #footer {
