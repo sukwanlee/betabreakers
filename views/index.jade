@@ -5,8 +5,8 @@ block content
     $(document).ready(function() {
       var height = $(window).height();
       var mainHeight = height * 0.65;
-      $('#main > h2').css("padding-top", mainHeight*0.35);
-      $('#main').css("min-height", mainHeight);
+      $('#main > #header > h2').css("padding-top", mainHeight*0.35);
+      $('#main').css("min-height", mainHeight/0.65);
 
       var offset = $("#register").height();
       $("#register").css("margin-top", -offset*0.7);
@@ -18,19 +18,19 @@ block content
     });
 
   #main
-    h2 Beta Breakers 
-      br
-      | Game Jam
-    .cohost
-      h3 Co-hosted by
-    .cohost
-      img(src="images/vungle-logo.png")
-  .dummy
-    .background
-      aside.diamond(href="#") filler
-    .foreground
-      aside.diamond Register Now!
-  #info 
+    #header
+      h2 BETA BREAKERS 
+        br
+        | GAME JAM
+      .cohost
+        h3 Co-hosted by
+      .cohost
+        img(src="images/vungle-logo.png")
+    .dummy
+      .background
+        aside.diamond_white a
+      #register_button
+        aside.diamond REGISTER NOW!
     .info_block
       i.info_icon(class="fa fa-calendar fa-4x")
       br
@@ -65,13 +65,16 @@ block content
   .full_width
     .speaker_block
       .speaker_image
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      h3 Mark Prokoudine
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
     .speaker_block
       .speaker_image
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      h3 Mark Prokoudine
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
     .speaker_block
       .speaker_image
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      h3 Basu Porkoudine
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
   .dummy
     .background
       aside.diamond(href="#") filler

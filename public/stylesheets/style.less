@@ -1,24 +1,7 @@
 body {
   margin: 0 !important;
 	padding: 0 !important;
-	font-family: "museo-slab";
-  // font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-
-  // background: url("../images/background-2.jpg");
-  // background-size: cover;
-  // background-repeat: no-repeat;
-  // background-position: 50% 50%;
-  // top: 0;
-  // left: 0;
-  // bottom: 0;
-  // right: 0;
-  // position: absolute;
-
-  // -webkit-filter: blur(4px);
-  // -moz-filter: blur(2px);
-  // -o-filter: blur(2px);
-  // -ms-filter: blur(2px);
-  // filter: blur(2px);
+	font-family: "Raleway", sans-serif;
 }
 
 hr {
@@ -39,39 +22,46 @@ hr {
 
   overflow: hidden;
 
-  .cohost{
-    img {
-      height: 6em;
-      padding-left: 1.4em;
+  #header {
+    z-index: 3;
+    position: relative;
+    .cohost{
+      img {
+        height: 6em;
+        padding-left: 1.4em;
+      }
+    }
+
+    h2 {  
+      font-weight: 300;
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 2.5em;
+    }
+
+    padding-bottom: 70px;
+    // border-bottom: 2px solid white;
+  }
+
+  .info_block {
+    position: relative;
+    z-index: 8;
+
+    color: white;
+
+    display: inline-block;
+    width: 200px;
+
+    text-align: center;
+    vertical-align: middle;
+
+    // overflow: hidden;
+
+    .info_icon {
+      padding-top: 70px;
+      padding-bottom: 40px;
     }
   }
-
-  h2 {  
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 2.5em;
-  	letter-spacing: -3px;
-  }
-
-  border-bottom: 2px solid black;
-}
-
-#main::before {
-  content: "";
-  background: url("../images/background-2.jpg");
-  // background-color: black;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  // opacity: 0.7;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;  
-  height: 65%; 
-
 }
 
 .dummy{
@@ -93,12 +83,31 @@ hr {
       color: white;
 
       &.diamond {
-        background-color: #333333;
+        background-color: black;
         &:after {
-          border-color: transparent #333333;
+          border-color: transparent black;
         }
         &:before {
-          border-color: transparent #333333; 
+          border-color: transparent black; 
+        }
+        &:before {
+          left: -20px;
+          border-width: 20px 20px 20px 0;
+        }
+        &:after {
+          right: -20px;
+          border-width: 20px 0 20px 20px;
+        }
+      }
+
+      &.diamond_white {
+        background-color: white;
+        // &:color: white;
+        &:after {
+          border-color: transparent white;
+        }
+        &:before {
+          border-color: transparent white; 
         }
         &:before {
           left: -20px;
@@ -126,18 +135,17 @@ hr {
 
   .foreground {
     aside {
-      width: 156px;
+      width: 158px;
       margin: 20px 0;
-      margin-top: -17px;
-      margin-bottom: -17px;
-      line-height: 32px;
+      margin-top: -19px;
+      margin-bottom: -19px;
+      line-height: 36px;
       position: absolute;
-      cursor: pointer;
       user-select: none;
       text-align: center;
       color: black;
 
-      margin-left: 2px;
+      margin-left: 1px;
 
       &.diamond {
         background-color: white;
@@ -148,13 +156,64 @@ hr {
           border-color: transparent white; 
         }
         &:before {
-          left: -16px;
-          border-width: 16px 16px 16px 0;
+          left: -18px;
+          border-width: 18px 18px 18px 0;
         }
         &:after {
-          right: -16px;
-          border-width: 16px 0 16px 16px;
+          right: -18px;
+          border-width: 18px 0 18px 18px;
         }
+      }
+
+      z-index: 10;
+    }
+
+    aside:before, aside:after {
+      content: '';
+      position: absolute;
+      height: 0;
+      width: 0;
+      border-style: solid;
+      border-width: 0;
+      z-index: 10;
+    }
+  }
+
+  #register_button {
+    aside {
+      width: 158px;
+      margin: 20px 0;
+      margin-top: -19px;
+      margin-bottom: -19px;
+      line-height: 36px;
+      position: absolute;
+      cursor: pointer;
+      user-select: none;
+      text-align: center;
+      color: white;
+
+      margin-left: 1px;
+
+      &.diamond {
+        background-color: #5CB85C;
+        &:after {
+          border-color: transparent #5CB85C;
+        }
+        &:before {
+          border-color: transparent #5CB85C; 
+        }
+        &:before {
+          left: -18px;
+          border-width: 18px 18px 18px 0;
+        }
+        &:after {
+          right: -18px;
+          border-width: 18px 0 18px 18px;
+        }
+      }
+
+      &:hover {
+        opacity: 0.9;
       }
 
       z-index: 10;
@@ -172,40 +231,27 @@ hr {
   }
 }
 
-#info{
-  width: 100%;
-  align: middle;
-  text-align: center;
+#main::before {
+  content: "";
+  background: url("../images/background-2.jpg");
+  // background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  // opacity: 0.7;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: 0;  
+  height: 100%; 
 
-  padding-bottom: 25px;
-
-  background-color: white;
-  opacity: 1.0;
-
-  // border-top: 1px dashed black;
-  // border-bottom: 2px solid black;
-
-  // background: #EDEDED;
-  // background: #191970;
-
-  .info_block {
-    display: inline-block;
-    width: 23%;
-
-    text-align: center;
-    vertical-align: middle;
-
-    overflow: hidden;
-
-    .info_icon {
-      padding-top: 70px;
-      padding-bottom: 50px;
-    }
-  }
+  border-bottom: 2px solid black;
 }
 
 #description {
-  padding-top: 50px;
+  padding-top: 40px;
   padding-bottom: 130px;
   background-color: black;
   opacity: 0.85;
@@ -260,6 +306,7 @@ hr {
   p {
     margin: 0 auto;
     width: 50%;
+    color: grey;
   }
 }
 
