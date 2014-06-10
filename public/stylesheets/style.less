@@ -4,10 +4,10 @@ body {
 	font-family: "museo-slab";
   // font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 
-  background: url("../images/background-2.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
+  // background: url("../images/background-2.jpg");
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: 50% 50%;
   // top: 0;
   // left: 0;
   // bottom: 0;
@@ -22,7 +22,7 @@ body {
 }
 
 hr {
-  width: 20%;
+  width: 35%;
   border: none;
   height: 1px;
   color: #EDEDED;
@@ -53,32 +53,26 @@ hr {
   	letter-spacing: -3px;
   }
 
-  border-bottom: 2px dashed black;
+  border-bottom: 2px solid black;
 }
 
-// #main::before {
-//   content: "";
-//   background: url("../images/background-1.jpg");
-//   // background-color: black;
-//   background-size: cover;
-//   background-repeat: no-repeat;
-//   background-position: 50% 50%;
-//   // opacity: 0.7;
-//   top: 0;
-//   left: 0;
-//   bottom: 0;
-//   right: 0;
-//   position: absolute;
-//   z-index: -1;  
-//   height: 65%; 
+#main::before {
+  content: "";
+  background: url("../images/background-2.jpg");
+  // background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  // opacity: 0.7;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;  
+  height: 65%; 
 
-//   -webkit-filter: blur(4px);
-//   // -moz-filter: blur(2px);
-//   // -o-filter: blur(2px);
-//   -ms-filter: blur(2px);
-//   filter: blur(2px);
-//   // height: 150px;
-// }
+}
 
 .dummy{
   width: 160px;
@@ -86,46 +80,95 @@ hr {
   margin-top: 0;
   margin-bottom: 0;
 
-  aside {
-    margin: 20px 0;
-    margin-top: -21px;
-    margin-bottom: -19px;
-    line-height: 40px;
-    position: relative;
-    cursor: pointer;
-    user-select: none;
-    text-align: center;
-    color: white;
+  .background{
+    aside {
+      margin: 20px 0;
+      margin-top: -21px;
+      margin-bottom: -19px;
+      line-height: 40px;
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+      text-align: center;
+      color: white;
 
-    &.diamond {
-      background-color: #333333;
-      &:after {
-        border-color: transparent #333333;
+      &.diamond {
+        background-color: #333333;
+        &:after {
+          border-color: transparent #333333;
+        }
+        &:before {
+          border-color: transparent #333333; 
+        }
+        &:before {
+          left: -20px;
+          border-width: 20px 20px 20px 0;
+        }
+        &:after {
+          right: -20px;
+          border-width: 20px 0 20px 20px;
+        }
       }
-      &:before {
-        border-color: transparent #333333; 
-      }
-      &:before {
-        left: -20px;
-        border-width: 20px 20px 20px 0;
-      }
-      &:after {
-        right: -20px;
-        border-width: 20px 0 20px 20px;
-      }
+
+      z-index: 8;
     }
 
-    z-index: 10;
+    aside:before, aside:after {
+      content: '';
+      position: absolute;
+      height: 0;
+      width: 0;
+      border-style: solid;
+      border-width: 0;
+      z-index: 8;
+    } 
   }
 
-  aside:before, aside:after {
-    content: '';
-    position: absolute;
-    height: 0;
-    width: 0;
-    border-style: solid;
-    border-width: 0;
-    z-index: 10;
+  .foreground {
+    aside {
+      width: 156px;
+      margin: 20px 0;
+      margin-top: -17px;
+      margin-bottom: -17px;
+      line-height: 32px;
+      position: absolute;
+      cursor: pointer;
+      user-select: none;
+      text-align: center;
+      color: black;
+
+      margin-left: 2px;
+
+      &.diamond {
+        background-color: white;
+        &:after {
+          border-color: transparent white;
+        }
+        &:before {
+          border-color: transparent white; 
+        }
+        &:before {
+          left: -16px;
+          border-width: 16px 16px 16px 0;
+        }
+        &:after {
+          right: -16px;
+          border-width: 16px 0 16px 16px;
+        }
+      }
+
+      z-index: 10;
+    }
+
+    aside:before, aside:after {
+      content: '';
+      position: absolute;
+      height: 0;
+      width: 0;
+      border-style: solid;
+      border-width: 0;
+      z-index: 10;
+    }
   }
 }
 
@@ -137,7 +180,9 @@ hr {
   padding-bottom: 25px;
 
   background-color: white;
-  opacity: 0.85;
+  opacity: 1.0;
+
+  // border-top: 1px dashed black;
   // border-bottom: 2px solid black;
 
   // background: #EDEDED;
@@ -145,7 +190,7 @@ hr {
 
   .info_block {
     display: inline-block;
-    width: 25%;
+    width: 23%;
 
     text-align: center;
     vertical-align: middle;
@@ -161,11 +206,14 @@ hr {
 
 #description {
   padding-top: 50px;
-  padding-bottom: 150px;
-  background-color: white;
+  padding-bottom: 130px;
+  background-color: black;
   opacity: 0.85;
   width: 100%;
   text-align: center;
+
+  border-bottom: 2px solid black;
+  color: white;
 
   p {
     width: 60%;
@@ -186,7 +234,7 @@ hr {
   padding-bottom: 100px;
   display: inline-block;
   width: 33%;
-  // border-bottom: 2px solid black;
+  border-bottom: 2px solid black;
 
   text-align: center;
 
