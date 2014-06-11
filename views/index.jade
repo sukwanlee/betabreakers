@@ -9,15 +9,14 @@ block content
       var mainHeight = height * 0.65;
       var offset = $("#register").height();
 
-      $('#main > #header > #logo').css("margin-top", mainHeight*0.16);
       //- $('#main > #header > #logo').css("height", height*0.35);
-      if(height > 700) {
-        $('#main').css("min-height", height);
-        $('#main').css("max-height", height);
+      if(height > 800) {
+        $('#main').css("height", height);
+        $('#main > #header > #logo').css("margin-top", mainHeight*0.16);
       }
       else {
-        $('#main').css("min-height", 700);
-        $('#main').css("max-height", 700);
+        $('#main').css("height", 800);
+        $('#main > #header > #logo').css("margin-top", mainHeight*0.05);
       }
 
       if(height > 1000) {
@@ -141,27 +140,27 @@ block content
     .foreground
       aside.diamond SCHEDULE
   #schedule
-    #schedule_container
-      .row(style="border-top: 2px solid black")
-        .time 9:00 AM
-        .event REGISTRATION
-      .row
-        .time 10:00 AM
-        .event GAME JAM START!
-      .row
-        .time 11:30 AM
-        .event TECH TALK 1
-      .row
-        .time 12:30 PM
-        .event LUNCH
-      .row
-        .time 2:00 PM
-        .event TECH TALK 2
-      .row
-        .time 4:00 PM
-        .event SNACKS
-      .row(style="border-bottom: 2px solid black")
-        .time 6:30 PM
-        .event DINNER
+    #schedule_container Coming soon!
+      //- .row(style="border-top: 2px solid black")
+      //-   .time 9:00 AM
+      //-   .event REGISTRATION
+      //- .row
+      //-   .time 10:00 AM
+      //-   .event GAME JAM START!
+      //- .row
+      //-   .time 11:30 AM
+      //-   .event TECH TALK 1
+      //- .row
+      //-   .time 12:30 PM
+      //-   .event LUNCH
+      //- .row
+      //-   .time 2:00 PM
+      //-   .event TECH TALK 2
+      //- .row
+      //-   .time 4:00 PM
+      //-   .event SNACKS
+      //- .row(style="border-bottom: 2px solid black")
+      //-   .time 6:30 PM
+      //-   .event DINNER
   #footer
     p Copyright Beta Breakers, 2014
