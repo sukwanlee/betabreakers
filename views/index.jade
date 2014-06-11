@@ -4,12 +4,13 @@ block content
   script(type="text/javascript", src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKTdq8KuNiUo6Iomn59dMZKxjeMuyhJks").
   script(type="text/javascript").
     $(document).ready(function() {
+      window.scrollReveal = new scrollReveal();
       var height = $(window).height();
       var mainHeight = height * 0.65;
       var offset = $("#register").height();
 
-      $('#main > #header > #logo').css("padding-top", mainHeight*0.15);
-      $('#main > #header > #logo').css("height", height*0.25);
+      $('#main > #header > #logo').css("margin-top", mainHeight*0.16);
+      //- $('#main > #header > #logo').css("height", height*0.35);
       if(height > 700) {
         $('#main').css("min-height", height);
         $('#main').css("max-height", height);
@@ -55,13 +56,17 @@ block content
     });
 
   #main
+    .cloud.x1
+    .cloud.x2
+    .cloud.x3
+    .cloud.x4
     #header
       #logo
         img(src="images/betabreakers_logo.png")
-      //- .cohost
+      .cohost
         h3(style="font-weight: 300") CO-HOSTED BY
-      //- .cohost
-        img(src="images/vungle-logo.png")
+      .cohost
+        img(src="images/vungle-logo-w.png")
     .dummy
       #register_button_background
         aside.diamond_white a
@@ -69,29 +74,29 @@ block content
         aside.diamond a
       #register_button
         aside.diamond REGISTER NOW!
-    .info_block#calendar
+    .info_block#calendar(data-scroll-reveal="enter bottom and move 40px over 0.5s")
       i.info_icon(class="fa fa-calendar fa-4x")
       br
-      | August 1-2
+      | July 26-27
       br
       | 24 Hours
-    .info_block#marker
+    .info_block#marker(data-scroll-reveal="enter bottom and move 40px over 0.5s")
       i.info_icon(class="fa fa-map-marker fa-4x")
       br
       | Vungle HQ
       br
       | San Francisco, CA
-    .info_block#users
+    .info_block#users(data-scroll-reveal="enter bottom and move 40px over 0.5s")
       i.info_icon(class="fa fa-users fa-4x")
       br
       | 300 Game Devs
-    .info_block#dollar
+    .info_block#dollar(data-scroll-reveal="enter bottom and move 40px over 0.5s")
       i.info_icon(class="fa fa-dollar fa-4x")
       br
       | 10k in Prizes
   //- hr
-  #description
-    p "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  #description(data-scroll-reveal)
+    p(data-scroll-reveal="enter top and move 60px over 1.33s") "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   .dummy
     .background
       aside.diamond .
@@ -99,17 +104,17 @@ block content
       aside.diamond JUDGES
   .full_width
     .speaker_block
-      .speaker_image
-      h4 MARK PROKOUDINE
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      .speaker_image(data-scroll-reveal="enter top and move 40px over 0.7s")
+      h4(data-scroll-reveal="wait 0.1s then enter top and move 40px over 0.7s") MARK PROKOUDINE
+      p(data-scroll-reveal="wait 0.2s then enter top and move 40px over 0.7s") Lorem ipsum dolor sit amet, consectetur adipisicing elit.
     .speaker_block
-      .speaker_image
-      h4 MARK PROKOUDINE
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      .speaker_image(data-scroll-reveal="wait 0.1s then enter top and move 40px over 0.7s")
+      h4(data-scroll-reveal="wait 0.2s then enter top and move 40px over 0.7s") MARK PROKOUDINE
+      p(data-scroll-reveal="wait 0.3s then enter top and move 40px over 0.7s") Lorem ipsum dolor sit amet, consectetur adipisicing elit.
     .speaker_block
-      .speaker_image
-      h4 BASU PORKOUDINE
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      .speaker_image(data-scroll-reveal="wait 0.2s then enter top and move 40px over 0.7s")
+      h4(data-scroll-reveal="wait 0.3s then enter top and move 40px over 0.7s") BASU PORKOUDINE
+      p(data-scroll-reveal="wait 0.4s then enter top and move 40px over 0.7s") Lorem ipsum dolor sit amet, consectetur adipisicing elit.
   
   .dummy
     .background
@@ -125,7 +130,7 @@ block content
       aside.diamond LOCATION
   #map_container
     #details
-    #map_label 
+    #map_label(data-scroll-reveal="enter top and move 40px over 0.5s")
       p(style="font-weight: 200") VUNGLE HQ
         br
         | 185 Clara St, San Francisco
@@ -159,6 +164,4 @@ block content
         .time 6:30 PM
         .event DINNER
   #footer
-    p For sponsorship inquiries, contact something@example.com.
-      //- br
-      |  For other general inquiries, contact us at sthelse@example.com
+    p Copyright Beta Breakers, 2014

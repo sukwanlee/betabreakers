@@ -2,6 +2,8 @@ body {
   margin: 0 !important;
 	padding: 0 !important;
 	font-family: "proxima-nova",sans-serif;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 hr {
@@ -13,6 +15,128 @@ hr {
   margin: 0 auto;
 }
 
+.cloud {
+  width: 200px; height: 60px;
+  background: #fff;
+  
+  border-radius: 200px;
+  -moz-border-radius: 200px;
+  -webkit-border-radius: 200px;
+  
+  position: absolute; 
+}
+
+.cloud:before, .cloud:after {
+  content: '';
+  position: absolute; 
+  background: #fff;
+  width: 100px; height: 80px;
+  position: absolute; top: -15px; left: 10px;
+  
+  border-radius: 100px;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+}
+
+.cloud:after {
+  width: 120px; height: 120px;
+  top: -55px; left: auto; right: 15px;
+}
+
+/*Time to animate*/
+.x1 {
+  top: 80px; left: 500px;
+
+  -webkit-animation: moveclouds-reverse 45s linear infinite;
+  -moz-animation: moveclouds-reverse 45s linear infinite;
+  -o-animation: moveclouds-reverse 45s linear infinite;
+}
+
+/*variable speed, opacity, and position of clouds for realistic effect*/
+.x2 {
+  left: 50%; top: 50px;
+  
+  -webkit-transform: scale(0.6);
+  -moz-transform: scale(0.6);
+  transform: scale(0.6);
+  opacity: 0.6; /*opacity proportional to the size*/
+  
+  /*Speed will also be proportional to the size and opacity*/
+  /*More the speed. Less the time in 's' = seconds*/
+  -webkit-animation: moveclouds 35s linear infinite;
+  -moz-animation: moveclouds 35s linear infinite;
+  -o-animation: moveclouds 35s linear infinite;
+}
+
+.x3 {
+  left: 90%; top: 200px;
+  
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0.8; /*opacity proportional to the size*/
+  
+  -webkit-animation: moveclouds 35s linear infinite;
+  -moz-animation: moveclouds 35s linear infinite;
+  -o-animation: moveclouds 35s linear infinite;
+}
+
+.x4 {
+  left: 0; top: 250px;
+  
+  -webkit-transform: scale(0.75);
+  -moz-transform: scale(0.75);
+  transform: scale(0.75);
+  opacity: 0.75; /*opacity proportional to the size*/
+  
+  -webkit-animation: moveclouds-reverse 30s linear infinite;
+  -moz-animation: moveclouds-reverse 30s linear infinite;
+  -o-animation: moveclouds-reverse 30s linear infinite;
+}
+
+.x5 {
+  left: 40%; top: 150px;
+  
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0.8; /*opacity proportional to the size*/
+  
+  -webkit-animation: moveclouds 35s linear infinite;
+  -moz-animation: moveclouds 35s linear infinite;
+  -o-animation: moveclouds 35s linear infinite;
+}
+
+@-webkit-keyframes moveclouds {
+  0% {margin-left: 1000px;}
+  100% {margin-left: -1000px;}
+}
+@-moz-keyframes moveclouds {
+  0% {margin-left: 1000px;}
+  100% {margin-left: -1000px;}
+}
+@-o-keyframes moveclouds {
+  0% {margin-left: 1000px;}
+  100% {margin-left: -1000px;}
+}
+
+@-webkit-keyframes moveclouds-reverse {
+  0% {margin-left: -1000px;}
+  100% {margin-left: 1000px;}
+}
+@-moz-keyframes moveclouds-reverse {
+  0% {margin-left: -1000px;}
+  100% {margin-left: 1000px;}
+}
+@-o-keyframes moveclouds-reverse {
+  0% {margin-left: -1000px;}
+  100% {margin-left: 1000px;}
+}
+
 #main {
 	width: 100%;
 	text-align: center;
@@ -20,35 +144,15 @@ hr {
   margin-bottom: 0;
   padding-bottom: 0;
 
-  background: url("../images/background-4.jpg");
+  background: url("../images/background-animation-1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
 
+  // background-color: white;
+
   // border-bottom: 2px solid black;
   overflow: hidden;
-
-  #header {
-    z-index: 3;
-    position: relative;
-
-    .cohost{
-      img {
-        height: 6em;
-        padding-left: 1.4em;
-      }
-    }
-
-    h2 {  
-      font-weight: 300;
-      margin-top: 0;
-      margin-bottom: 0;
-      font-size: 2.5em;
-    }
-
-    padding-bottom: 100px;
-    // border-bottom: 2px solid white;
-  }
 }
 
 .dummy{
@@ -296,7 +400,7 @@ hr {
     p {
       margin: 0 auto;
       width: 50%;
-      color: grey;
+      color: #8f989f;
     }
   }
 
@@ -306,6 +410,7 @@ hr {
     padding-bottom: 50px;
     align: middle;
     text-align: center;
+    border-bottom: 2px solid #ededed;
 
     #schedule_container {
       width: 100%;
@@ -374,7 +479,7 @@ hr {
     p {
       margin: 0 auto;
       width: 50%;
-      color: grey;
+      color: #8f989f;
     }
   }
 
@@ -384,6 +489,7 @@ hr {
     padding-bottom: 100px;
     align: middle;
     text-align: center;
+    border-bottom: 2px solid #ededed;
 
     #schedule_container {
       width: 40%;
@@ -428,6 +534,30 @@ hr {
 }
 
 @media(max-width: 800px) {
+  #header {
+    z-index: 3;
+    position: relative;
+
+    .cohost{
+      margin: 0 auto;
+      width: 100%;
+      // background-color: white;
+      img {
+        height: 6em;
+      }
+    }
+
+    h3 {  
+      font-weight: 300;
+      // margin-top: -40px;
+      // margin-bottom: 20px;
+      font-size: 1em;
+    }
+
+    padding-bottom: 80px;
+    // border-bottom: 2px solid white;
+  }
+
   .info_block {
     position: relative;
     z-index: 8;
@@ -452,7 +582,7 @@ hr {
 
   #logo{
     img {
-      max-height: 12em;
+      max-height: 18em;
       max-width: 85%;
       height: auto;
     }
@@ -460,6 +590,30 @@ hr {
 }
 
 @media (min-width: 800px) {
+  #header {
+    z-index: 3;
+    position: relative;
+
+    .cohost{
+      margin: 0 auto;
+      width: 15%;
+      // background-color: white;
+      img {
+        height: 6em;
+      }
+    }
+
+    h3 {  
+      font-weight: 300;
+      margin-top: -40px;
+      margin-bottom: 50px;
+      font-size: 1em;
+    }
+
+    padding-bottom: 80px;
+    // border-bottom: 2px solid white;
+  }
+
   .info_block {
     position: relative;
     z-index: 8;
@@ -471,7 +625,7 @@ hr {
 
     text-align: center;
     vertical-align: middle;
-    // padding-top: 20px;
+    padding-top: 30px;
 
     // overflow: hidden;
 
@@ -483,7 +637,7 @@ hr {
 
   #logo{
     img {
-      height: 12em;
+      height: 17em;
     }
   }
 }
@@ -538,17 +692,13 @@ hr {
   } 
 }
 
-
-
 #footer {
-  background-color: black;
-  opacity: 0.6;
   padding-top: 20px;
   padding-bottom: 20px;
 
   p {
     width: 90%;
     margin: 0 auto;
-    color: white;
+    text-align: center;
   }
 }
