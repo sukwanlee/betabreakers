@@ -6,17 +6,24 @@ block content
     $(document).ready(function() {
       var height = $(window).height();
       var mainHeight = height * 0.65;
-      $('#main > #header > h2').css("padding-top", mainHeight*0.25);
-      if(height > 750) {
+      var offset = $("#register").height();
+
+      $('#main > #header > #logo').css("padding-top", mainHeight*0.15);
+      $('#main > #header > #logo').css("height", height*0.25);
+      if(height > 700) {
         $('#main').css("min-height", height);
         $('#main').css("max-height", height);
       }
       else {
-        $('#main').css("min-height", 750);
-        $('#main').css("max-height", 750);
+        $('#main').css("min-height", 700);
+        $('#main').css("max-height", 700);
       }
 
-      var offset = $("#register").height();
+      if(height > 1000) {
+        $('#main > .info_block').css("padding-top", 100);
+      }
+
+      
       $("#register").css("margin-top", -offset*0.7);
       $("#info").css("padding-top", offset*2);
 
@@ -25,15 +32,16 @@ block content
       $('.info_block').css("max-height", info_height);
 
       function initialize() {
-        var styles = [{"featureType":"administrative","stylers":[{"visibility":"off"}]},{"featureType":"poi","stylers":[{"visibility":"simplified"}]},{"featureType":"road","stylers":[{"visibility":"simplified"}]},{"featureType":"water","stylers":[{"visibility":"simplified"}]},{"featureType":"transit","stylers":[{"visibility":"simplified"}]},{"featureType":"landscape","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"visibility":"off"}]},{"featureType":"road.local","stylers":[{"visibility":"on"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"water","stylers":[{"color":"#84afa3"},{"lightness":52}]},{"stylers":[{"saturation":-77}]},{"featureType":"road"}];
+        var styles = [{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#1900ff"},{"color":"#c0e8e8"}]},{"featureType":"landscape.man_made","elementType":"geometry.fill"},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"water","stylers":[{"color":"#7dcdcd"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]}];
         var location = new google.maps.LatLng(37.779776, -122.401833); 
 
         var mapOptions = {
           center: location,
-          zoom: 15,
+          zoom: 16,
           disableDefaultUI: true,
           scrollwheel: false,
           draggable: false,
+          disableDoubleClickZoom: true,
           styles: styles
         };
         var map = new google.maps.Map(document.getElementById("details"), mapOptions);
@@ -48,12 +56,11 @@ block content
 
   #main
     #header
-      h2 BETA BREAKERS 
-        br
-        | GAME JAM
-      .cohost
-        h3 Co-hosted by
-      .cohost
+      #logo
+        img(src="images/betabreakers_logo.png")
+      //- .cohost
+        h3(style="font-weight: 300") CO-HOSTED BY
+      //- .cohost
         img(src="images/vungle-logo.png")
     .dummy
       #register_button_background
@@ -62,23 +69,23 @@ block content
         aside.diamond a
       #register_button
         aside.diamond REGISTER NOW!
-    .info_block
+    .info_block#calendar
       i.info_icon(class="fa fa-calendar fa-4x")
       br
       | August 1-2
       br
       | 24 Hours
-    .info_block
+    .info_block#marker
       i.info_icon(class="fa fa-map-marker fa-4x")
       br
       | Vungle HQ
       br
       | San Francisco, CA
-    .info_block
+    .info_block#users
       i.info_icon(class="fa fa-users fa-4x")
       br
       | 300 Game Devs
-    .info_block
+    .info_block#dollar
       i.info_icon(class="fa fa-dollar fa-4x")
       br
       | 10k in Prizes
@@ -87,42 +94,47 @@ block content
     p "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   .dummy
     .background
-      aside.diamond(href="#") filler
+      aside.diamond .
     .foreground
-      aside.diamond Judges
+      aside.diamond JUDGES
   .full_width
     .speaker_block
       .speaker_image
-      h3 Mark Prokoudine
+      h4 MARK PROKOUDINE
       p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
     .speaker_block
       .speaker_image
-      h3 Mark Prokoudine
+      h4 MARK PROKOUDINE
       p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
     .speaker_block
       .speaker_image
-      h3 Basu Porkoudine
+      h4 BASU PORKOUDINE
       p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
   
   .dummy
     .background
       aside.diamond a
     .foreground
-      aside.diamond Sponsors
+      aside.diamond SPONSORS
   #sponsors
 
   .dummy
     .background
       aside.diamond a
     .foreground
-      aside.diamond Details
-  #details
+      aside.diamond LOCATION
+  #map_container
+    #details
+    #map_label 
+      p(style="font-weight: 200") VUNGLE HQ
+        br
+        | 185 Clara St, San Francisco
 
   .dummy
     .background
       aside.diamond a
     .foreground
-      aside.diamond Schedule
+      aside.diamond SCHEDULE
   #schedule
     #schedule_container
       .row(style="border-top: 2px solid black")
