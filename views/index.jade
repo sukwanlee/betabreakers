@@ -10,26 +10,42 @@ block content
       var offset = $("#register").height();
 
       //- $('#main > #header > #logo').css("height", height*0.35);
-      if(height > 800) {
+      if(height > 850) {
         $('#main').css("height", height);
         $('#main > #header > #logo').css("margin-top", mainHeight*0.16);
       }
-      else {
-        $('#main').css("height", 800);
+      else if (height > 800) {
+        $('#main').css("height", height);
         $('#main > #header > #logo').css("margin-top", mainHeight*0.05);
+      }
+      else if (height > 700) {
+        $('#main').css("height", height);
+        $("#main > #header > #logo > img").css("height", "14em");
+      }
+      else if (height > 600) {
+        $('#main').css("height", height);
+        $("#main > #header > #logo > img").css("height", "10em");
+        $("#main > #header > .cohost > h3").css("margin-top", 0);
+        $("#main > #header > .cohost > h3").css("margin-bottom", 0);
+      }
+      else {
+        $('#main').css("height", 850);
+        $('#main > #header > #logo').css("margin-top", mainHeight*0.16);
       }
 
       if(height > 1000) {
         $('#main > .info_block').css("padding-top", 100);
       }
-
       
       $("#register").css("margin-top", -offset*0.7);
-      $("#info").css("padding-top", offset*2);
 
       var info_height = height * 0.35 - offset*2;
-      $('#info').css("height", info_height);
-      $('.info_block').css("max-height", info_height);
+      $('.info_block').css("height", info_height);
+
+      if(height > $(window).width()) {
+        $('#main > #header > #logo').css("padding-top", 40);
+        $('#main > .dummy > #register_button').css("padding-bottom", 50);
+      }
 
       function initialize() {
         var styles = [{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#1900ff"},{"color":"#c0e8e8"}]},{"featureType":"landscape.man_made","elementType":"geometry.fill"},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"water","stylers":[{"color":"#7dcdcd"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]}];
@@ -73,23 +89,23 @@ block content
         aside.diamond a
       #register_button
         aside.diamond REGISTER NOW!
-    .info_block#calendar(data-scroll-reveal="enter bottom and move 40px over 0.5s")
+    .info_block#calendar(data-scroll-reveal="enter top over 0.5s")
       i.info_icon(class="fa fa-calendar fa-4x")
       br
       | July 26-27
       br
       | 24 Hours
-    .info_block#marker(data-scroll-reveal="enter bottom and move 40px over 0.5s")
+    .info_block#marker(data-scroll-reveal="enter top over 0.5s")
       i.info_icon(class="fa fa-map-marker fa-4x")
       br
       | Vungle HQ
       br
       | San Francisco, CA
-    .info_block#users(data-scroll-reveal="enter bottom and move 40px over 0.5s")
+    .info_block#users(data-scroll-reveal="enter top over 0.5s")
       i.info_icon(class="fa fa-users fa-4x")
       br
       | 300 Game Devs
-    .info_block#dollar(data-scroll-reveal="enter bottom and move 40px over 0.5s")
+    .info_block#dollar(data-scroll-reveal="enter top over 0.5s")
       i.info_icon(class="fa fa-dollar fa-4x")
       br
       | 10k in Prizes
