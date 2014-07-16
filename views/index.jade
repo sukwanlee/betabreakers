@@ -12,7 +12,7 @@ block content
       //- $('#main > #header > #logo').css("height", height*0.35);
       if(height > 850) {
         $('#main').css("height", height);
-        $('#main > #header > #logo').css("margin-top", mainHeight*0.16);
+        $('#main > #header > #logo').css("margin-top", mainHeight*0.05);
       }
       else if (height > 800) {
         $('#main').css("height", height);
@@ -117,17 +117,17 @@ block content
       aside.diamond .
     .foreground
       aside.diamond JUDGES
-  .full_width
+  .full_width(style="margin: 0 auto; text-align: center;")
     .speaker_block
-      .speaker_image#wayne(data-scroll-reveal="enter top and move 40px over 0.7s")
+      #wayne(data-scroll-reveal="enter top and move 40px over 0.7s")
       h4(data-scroll-reveal="wait 0.1s then enter top and move 40px over 0.7s") WAYNE CHAN
       p(data-scroll-reveal="wait 0.2s then enter top and move 40px over 0.7s") Founder of Kabam
     .speaker_block
-      .speaker_image#unknown(data-scroll-reveal="wait 0.1s then enter top and move 40px over 0.7s")
-      h4(data-scroll-reveal="wait 0.2s then enter top and move 40px over 0.7s") 
-      p(data-scroll-reveal="wait 0.3s then enter top and move 40px over 0.7s") 
-    .speaker_block
-      .speaker_image#unknown(data-scroll-reveal="wait 0.2s then enter top and move 40px over 0.7s")
+      #unknown(data-scroll-reveal="wait 0.1s then enter top and move 40px over 0.7s")
+      h4(data-scroll-reveal="wait 0.2s then enter top and move 40px over 0.7s") COMING SOON
+      p(data-scroll-reveal="wait 0.3s then enter top and move 40px over 0.7s" style="color: transparent") .
+    //- .speaker_block
+      #unknown(data-scroll-reveal="wait 0.2s then enter top and move 40px over 0.7s")
       h4(data-scroll-reveal="wait 0.3s then enter top and move 40px over 0.7s")
       p(data-scroll-reveal="wait 0.4s then enter top and move 40px over 0.7s") 
   

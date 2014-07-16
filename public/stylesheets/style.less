@@ -341,14 +341,6 @@ hr {
   }
 }
 
-@media(max-height: 750px) {
-
-}
-
-@media (min-height: 750px) {
-
-}
-
 #description {
   padding-top: 70px;
   padding-bottom: 80px;
@@ -387,7 +379,7 @@ hr {
 
     text-align: center;
 
-    .speaker_image {
+    #wayne {
       margin: 0 auto;
       margin-bottom: 50px;
       width: 150px;
@@ -395,9 +387,7 @@ hr {
       border-radius: 75px;
       -webkit-border-radius: 75px;
       -moz-border-radius: 75px;
-    }
 
-    #wayne {
       background: url("../images/wayne-chan.jpg");
       background-size: cover;
       background-repeat: no-repeat;
@@ -405,6 +395,14 @@ hr {
     }
 
     #unknown {
+      margin: 0 auto;
+      margin-bottom: 50px;
+      width: 150px;
+      height: 150px;
+      border-radius: 75px;
+      -webkit-border-radius: 75px;
+      -moz-border-radius: 75px;
+
       background: url("../images/unknown.jpg");
       background-size: cover;
       background-repeat: no-repeat;
@@ -473,18 +471,33 @@ hr {
     display: inline-block;
     width: 33%;
 
-    text-align: center;
+    text-align: center; 
 
-    .speaker_image {
+    #wayne {
       margin: 0 auto;
       margin-bottom: 50px;
-
       width: 150px;
       height: 150px;
       border-radius: 75px;
       -webkit-border-radius: 75px;
       -moz-border-radius: 75px;
-      background: url("../images/markprokoudine.jpeg");
+
+      background: url("../images/wayne-chan.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+
+    #unknown {
+      margin: 0 auto;
+      margin-bottom: 50px;
+      width: 150px;
+      height: 150px;
+      border-radius: 75px;
+      -webkit-border-radius: 75px;
+      -moz-border-radius: 75px;
+
+      background: url("../images/unknown.jpg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: 50% 50%;
@@ -547,13 +560,14 @@ hr {
   }
 }
 
-@media(max-width: 800px) {
+@media(max-width: 900px) {
   #header {
     z-index: 3;
     position: relative;
 
     .cohost{
       margin: 0 auto;
+      margin-right: 200px;
       width: 100%;
       // background-color: white;
       img {
@@ -586,7 +600,7 @@ hr {
     // padding-top: 20px;
 
     // overflow: hidden;
-    font-size: 0.7em;
+    font-size: 1em;
 
     .info_icon {
       padding-top: 70px;
@@ -603,7 +617,7 @@ hr {
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   #header {
     z-index: 3;
     position: relative;
@@ -624,7 +638,7 @@ hr {
       font-size: 1em;
     }
 
-    padding-bottom: 80px;
+    padding-bottom: 150px;
     // border-bottom: 2px solid white;
   }
 
