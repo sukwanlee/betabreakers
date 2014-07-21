@@ -9,6 +9,8 @@ block content
       var mainHeight = height * 0.65;
       var offset = $("#register").height();
 
+      $("#sponsor").css("margin-top", height*0.95);
+
       //- $('#main > #header > #logo').css("height", height*0.35);
       if(height > 850) {
         $('#main').css("height", height);
@@ -110,54 +112,55 @@ block content
       i.info_icon(class="fa fa-dollar fa-4x")
       br
       | 10k in Prizes
+    p#sponsor <a style="cursor: pointer;" href="/files/BetaBreakersSponsorshipFinal.pdf">SPONSORSHIP</a>
   //- hr
-  #description(data-scroll-reveal)
-    p(data-scroll-reveal="enter top and move 60px over 1.33s") Beta Breakers Game Jam is an annual 24-hour, 300 person event in San Francisco. Come meet and work with some of the most creative and talented game developers. There will be plenty of food and prizes!
-  .dummy
-    .background
-      aside.diamond .
-    .foreground
-      aside.diamond JUDGES
-  .full_width(style="margin: 0 auto; text-align: center;")
-    .speaker_block
-      #wayne(data-scroll-reveal="enter top and move 40px over 0.7s")
-      h4(data-scroll-reveal="wait 0.1s then enter top and move 40px over 0.7s") WAYNE CHAN
-      p(data-scroll-reveal="wait 0.2s then enter top and move 40px over 0.7s") Founder of Kabam
-    .speaker_block
-      #unknown(data-scroll-reveal="wait 0.1s then enter top and move 40px over 0.7s")
-      h4(data-scroll-reveal="wait 0.2s then enter top and move 40px over 0.7s") COMING SOON
-      p(data-scroll-reveal="wait 0.3s then enter top and move 40px over 0.7s" style="color: transparent") .
+  //- #description(data-scroll-reveal)
+  //-   p(data-scroll-reveal="enter top and move 60px over 1.33s") Beta Breakers Game Jam is an annual 24-hour, 300 person event in San Francisco. Come meet and work with some of the most creative and talented game developers. There will be plenty of food and prizes!
+  //- .dummy
+  //-   .background
+  //-     aside.diamond .
+  //-   .foreground
+  //-     aside.diamond JUDGES
+  //- .full_width(style="margin: 0 auto; text-align: center;")
+  //-   .speaker_block
+  //-     #wayne(data-scroll-reveal="enter top and move 40px over 0.7s")
+  //-     h4(data-scroll-reveal="wait 0.1s then enter top and move 40px over 0.7s") WAYNE CHAN
+  //-     p(data-scroll-reveal="wait 0.2s then enter top and move 40px over 0.7s") Founder of Kabam
+  //-   .speaker_block
+  //-     #unknown(data-scroll-reveal="wait 0.1s then enter top and move 40px over 0.7s")
+  //-     h4(data-scroll-reveal="wait 0.2s then enter top and move 40px over 0.7s") COMING SOON
+  //-     p(data-scroll-reveal="wait 0.3s then enter top and move 40px over 0.7s" style="color: transparent") .
     //- .speaker_block
       #unknown(data-scroll-reveal="wait 0.2s then enter top and move 40px over 0.7s")
       h4(data-scroll-reveal="wait 0.3s then enter top and move 40px over 0.7s")
       p(data-scroll-reveal="wait 0.4s then enter top and move 40px over 0.7s") 
   
-  .dummy
-    .background
-      aside.diamond a
-    .foreground
-      aside.diamond SPONSORS
-  #sponsors
+  //- .dummy
+  //-   .background
+  //-     aside.diamond a
+  //-   .foreground
+  //-     aside.diamond SPONSORS
+  //- #sponsors
 
-  .dummy
-    .background
-      aside.diamond a
-    .foreground
-      aside.diamond LOCATION
-  #map_container
-    #details
-    #map_label(data-scroll-reveal="enter top and move 40px over 0.5s")
-      p(style="font-weight: 200") VUNGLE HQ
-        br
-        | 185 Clara St, San Francisco
+  //- .dummy
+  //-   .background
+  //-     aside.diamond a
+  //-   .foreground
+  //-     aside.diamond LOCATION
+  //- #map_container
+  //-   #details
+  //-   #map_label(data-scroll-reveal="enter top and move 40px over 0.5s")
+  //-     p(style="font-weight: 200") VUNGLE HQ
+  //-       br
+  //-       | 185 Clara St, San Francisco
 
-  .dummy
-    .background
-      aside.diamond a
-    .foreground
-      aside.diamond SCHEDULE
-  #schedule
-    #schedule_container Coming soon!
+  //- .dummy
+  //-   .background
+  //-     aside.diamond a
+  //-   .foreground
+  //-     aside.diamond SCHEDULE
+  //- #schedule
+  //-   #schedule_container Coming soon!
       //- .row(style="border-top: 2px solid black")
       //-   .time 9:00 AM
       //-   .event REGISTRATION
@@ -179,5 +182,5 @@ block content
       //- .row(style="border-bottom: 2px solid black")
       //-   .time 6:30 PM
       //-   .event DINNER
-  #footer
-    p Copyright Beta Breakers, 2014
+  //- #footer
+  //-   p Copyright Beta Breakers, 2014
